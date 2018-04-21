@@ -1,0 +1,16 @@
+Readme
+
+Programmed in Scheme.
+
+Given a word such as '(h e l l o) , a hashlist containing hash functions, and a dictionary.  This program will return if the word
+is contained in the given dictionary.  If it is contained in the dictionary, it will return #t for true else #f for false.  
+
+This code is simple, every word has a certain array of hash functions to use.  The code takes in a word and a set of hash functions
+and creates a list of hash values.  If those hash values match the hash values in the dictionary, its a match, otherwise its not a 
+match.  For every match it will report a 1 in another list called the bitvector list, otherwise 0 in the bitvector list.  
+
+Once we have created the final bitvector list it may look somelike like '(0 0 0 1 0) or '(1 1 1 1 1).  The final spellchecker 
+result should only return #t if every bit in the bitvector list contains a 1, otherwise it is false (#f).  
+
+Note: Additionally, this code may produce false positives which means that mispelled words may be signaled as correct, but modifying
+the size variable used for the division and multiplication hash functions can reduce the odds of false positives.
